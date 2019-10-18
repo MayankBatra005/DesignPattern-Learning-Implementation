@@ -7,10 +7,11 @@
  * @since 10-17-2019
  */
 
-public class Assignment {
+public class Assignment extends Reminder{
 
-	public void accept(NodeVisitor nodeVisitor) {
-
+	public Reminder accept(NodeVisitor nodeVisitor) {
+		System.out.println("Assignment Reminder ...");
+		return nodeVisitor.visitAssignment(this);
 	}
 
 }

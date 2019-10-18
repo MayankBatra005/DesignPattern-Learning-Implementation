@@ -8,10 +8,12 @@
  */
 public abstract class NodeVisitor {
 
-	public abstract void visitFAcade();
+	public abstract Reminder visitFAcade(HacsFacade HF);
 
-	public abstract void visitAssignment();
+	public abstract Reminder visitAssignment(Assignment A);
 
-	public abstract void visitCourse();
+	public abstract Reminder visitCourse(CourseList CL);
+
+
 
 }

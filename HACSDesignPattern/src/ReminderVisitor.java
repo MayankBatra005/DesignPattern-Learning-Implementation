@@ -10,20 +10,21 @@ public class ReminderVisitor extends NodeVisitor {
 	String m_Reminder;
 
 	@Override
-	public void visitFAcade() {
-		// TODO Auto-generated method stub
-
+	public Reminder visitFAcade(HacsFacade HF) {
+		System.out.println("visiting Facade ....");
+		return new Assignment();
 	}
 
 	@Override
-	public void visitAssignment() {
-		// TODO Auto-generated method stub
-
+	public Reminder visitAssignment(Assignment A) {
+		System.out.println("visiting Assignment ....");
+		return A;
 	}
 
 	@Override
-	public void visitCourse() {
-		// TODO Auto-generated method stub
+	public Reminder visitCourse(CourseList CL) {
+		System.out.println("visiting Course ....");
+		return CL;
 
 	}
 

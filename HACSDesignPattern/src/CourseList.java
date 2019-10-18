@@ -6,10 +6,11 @@
  * @version 1.0
  * @since 10-17-2019
  */
-public class CourseList {
+public class CourseList extends Reminder{
 
-	public void accept(NodeVisitor nodeVisitor) {
-
+	public Reminder accept(NodeVisitor nodeVisitor) {
+		System.out.println("Course List Reminder ...");
+		return nodeVisitor.visitCourse(this);
 	}
 
 }

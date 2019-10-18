@@ -35,8 +35,14 @@ public class HacsFacade {
 			selectCourse(new LowLevelCourseMenu(), UserType);
 		} else {
 			System.out.println("Wrong Selection");
+			System.exit(-1);
 		}
-
+		//	Visitor pattern client class 
+		System.out.println("Implementing Visitor ....");
+		ReminderVisitor rem=new ReminderVisitor();
+		CourseList CL=new CourseList();
+		CL.accept(rem);
+		
 		scan.close();
 	}
 
@@ -66,7 +72,7 @@ public class HacsFacade {
 
 	public void remind(Reminder rem) {
 
-		rem.remind();
+	//	rem.remind();
 	}
 
 	public void createUser(UserInfoItem userinfoitem) {
