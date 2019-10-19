@@ -1,6 +1,5 @@
 /**
- * SER-515 Software Agility Displays the grade of the selected student using
- * ViewGrades.JSP
+ * SER-515 User information class
  * 
  * @author Mayank Batra, mbatra3@asu.edu
  * @version 1.0

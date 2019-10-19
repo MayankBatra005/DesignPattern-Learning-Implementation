@@ -1,8 +1,9 @@
+import java.util.Iterator;
 import java.util.Scanner;
 
 /**
- * SER-515 Software Agility Displays the grade of the selected student using
- * ViewGrades.JSP
+ * SER-515 Facade class to take care of the facade pattern it calls the classes
+ * for bridge pattern, factory pattern, visitor pattern, iterator pattern
  * 
  * @author Mayank Batra, mbatra3@asu.edu
  * @version 1.0
@@ -17,18 +18,13 @@ public class HacsFacade {
 	int thePerson;
 
 	public void startFacade() {
-		// Facade Pattern implementation
 		System.out.println("Facade pattern initiated ");
 		UserType = login(new Login());
-
 		System.out.println(
 				"Select from available Course Menus \n 1. High Level Course Menu \n 2. Low Level Course Menu ");
 		Scanner scan = new Scanner(System.in);
 		theSelecteCourse = scan.nextLine();
-
-		// System.out.println(theSelecteCourse);
-		// pattern implemented (Bridge implementation and Factory implementation will
-		// also occur in this only)
+		// pattern implemented (Bridge implementation and Factory implementation
 		if (theSelecteCourse.equalsIgnoreCase("High Level Course Menu")) {
 			selectCourse(new HighLevelCourseMenu(), UserType);
 		} else if (theSelecteCourse.equalsIgnoreCase("Low Level Course Menu")) {
@@ -37,12 +33,21 @@ public class HacsFacade {
 			System.out.println("Wrong Selection");
 			System.exit(-1);
 		}
-		//	Visitor pattern client class 
-		System.out.println("Implementing Visitor ....");
-		ReminderVisitor rem=new ReminderVisitor();
-		CourseList CL=new CourseList();
-		CL.accept(rem);
-		
+		System.out.println("Implementing Visitor Pattern....");
+		remind();
+		System.out.println("Implementing Iterator pattern ....");
+		CourseList courses = new CourseList();
+		@SuppressWarnings("rawtypes")
+		Iterator iterate = (Iterator) courses.createIterator();
+		CourseIterator CourseIterator = new CourseIterator();
+		SolutionList solList = new SolutionList();
+		@SuppressWarnings("rawtypes")
+		Iterator iterate2 = (Iterator) solList.createIterator();
+		SolutionIterator si = new SolutionIterator();
+		while (CourseIterator.HasNext(iterate)) {
+			System.out.println(CourseIterator.Next(iterate));
+			System.out.println(si.Next(iterate2));
+		}
 		scan.close();
 	}
 
@@ -70,9 +75,11 @@ public class HacsFacade {
 		SM.submitSolution();
 	}
 
-	public void remind(Reminder rem) {
+	public void remind() {
+		ReminderVisitor remind = new ReminderVisitor();
+		CourseList CL = new CourseList();
+		CL.accept(remind);
 
-	//	rem.remind();
 	}
 
 	public void createUser(UserInfoItem userinfoitem) {

@@ -1,6 +1,6 @@
 /**
- * SER-515 Software Agility Displays the grade of the selected student using
- * ViewGrades.JSP
+ * SER-515 Student Class inheriting from person class and implementing bridge
+ * pattern
  * 
  * @author Mayank Batra, mbatra3@asu.edu
  * @version 1.0
@@ -13,11 +13,7 @@ public class Student extends Person {
 
 	Student(CourseMenu theCourseMenu) {
 		super(theCourseMenu);
-		// TODO Auto-generated constructor stub
 	}
-
-	// Implement the concept of high level or low level calling basis on the
-	// available text files
 
 	@Override
 	public void ShowMenu() {
@@ -27,7 +23,6 @@ public class Student extends Person {
 
 	@Override
 	public CourseMenu CreateCourseMenu() {
-		// Create connection with low level and highlevel course menu
 		String test = "High Level";
 		if (test.equalsIgnoreCase("High Level")) {
 			return new HighLevelCourseMenu();

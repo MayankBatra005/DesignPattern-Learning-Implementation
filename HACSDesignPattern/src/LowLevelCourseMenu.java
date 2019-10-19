@@ -1,6 +1,5 @@
 /**
- * SER-515 Software Agility Displays the grade of the selected student using
- * ViewGrades.JSP
+ * SER-515 Low level Course responsible for bridge patterna and factory pattern
  * 
  * @author Mayank Batra, mbatra3@asu.edu
  * @version 1.0
@@ -39,21 +38,16 @@ public class LowLevelCourseMenu extends CourseMenu {
 	}
 
 	public void selectCourse(int USerType) {
-		System.out.println("Low Level Course Selected ...");
+		System.out.println("Low Level Course Selected ...\n Bridge Pattern for connection used ");
 		Person person;
 		if (USerType == 0) {
 			person = PersonFactory.createObject("Student");
 
 		} else
-		// if (USerType == 1)
 		{
 			person = PersonFactory.createObject("Instructor");
 
 		}
 		person.ShowMenu();
-
-		// Now we will show courses using iterator pattern
-
-		System.out.println("List of Courses will appear here ");
 	}
 }

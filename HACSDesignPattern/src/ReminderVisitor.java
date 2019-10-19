@@ -1,6 +1,5 @@
 /**
- * SER-515 Software Agility Displays the grade of the selected student using
- * ViewGrades.JSP
+ * SER-515 Reminder Visitor class responsible for implementing visitor pattern
  * 
  * @author Mayank Batra, mbatra3@asu.edu
  * @version 1.0
@@ -10,9 +9,9 @@ public class ReminderVisitor extends NodeVisitor {
 	String m_Reminder;
 
 	@Override
-	public Reminder visitFAcade(HacsFacade HF) {
+	public void visitFAcade(HacsFacade HF) {
 		System.out.println("visiting Facade ....");
-		return new Assignment();
+
 	}
 
 	@Override

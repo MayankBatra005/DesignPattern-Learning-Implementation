@@ -1,8 +1,7 @@
 
 /**
- * SER-515 Software Agility Displays the grade of the selected student using
- * ViewGrades.JSP
- * 
+ * SER-515 
+ * Person Factory class responsible for factory pattern and returning the desired objects 
  * @author Mayank Batra, mbatra3@asu.edu
  * @version 1.0
  * @since 10-17-2019
@@ -11,14 +10,10 @@ public class PersonFactory extends Person {
 
 	PersonFactory(CourseMenu theCourseMenu) {
 		super(theCourseMenu);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public void ShowMenu() {
-		// TODO Auto-generated method stub
-
-	}
+	public void ShowMenu() {}
 
 	@Override
 	public CourseMenu CreateCourseMenu() {
@@ -28,6 +23,7 @@ public class PersonFactory extends Person {
 
 	public static Person createObject(String str) {
 		Person person;
+		System.out.println("Factory Pattern Intiated for user creation....");
 		if (str.equalsIgnoreCase("Student")) {
 			person = new Student();
 		} else

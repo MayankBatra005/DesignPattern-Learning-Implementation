@@ -1,6 +1,5 @@
 /**
- * SER-515 Software Agility Displays the grade of the selected student using
- * ViewGrades.JSP
+ * SER-515 Hacs main class to initiate the facade pattern
  * 
  * @author Mayank Batra, mbatra3@asu.edu
  * @version 1.0
