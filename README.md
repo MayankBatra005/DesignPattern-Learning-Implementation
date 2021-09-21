@@ -1,5 +1,7 @@
-# SER 515 DesignPattern Assignment
-Design Patterns used: 
+### Personal Projects for Design patterns
+- Filter Design pattern [Learning Reference](https://www.youtube.com/watch?v=icgoR_vfh40)
+### SER 515 DesignPattern Assignment
+Design Patterns used in the project HACS: 
 - Bridge pattern
 - Factory Pattern
 - Facade pattern
