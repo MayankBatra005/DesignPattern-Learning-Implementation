@@ -1,5 +1,10 @@
 ### Personal Projects for Design patterns
 - Filter Design pattern [Learning Reference](https://www.youtube.com/watch?v=icgoR_vfh40)
+- Singleton Design pattern<br>
+    -- Simple singleton without thread safe<br>
+    -- Thread safe <br>
+    -- Thread Safe with double locking<br>  
+
 ### SER 515 DesignPattern Assignment
 Design Patterns used in the project HACS: 
 - Bridge pattern
